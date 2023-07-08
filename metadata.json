@@ -4,7 +4,7 @@
     "Sweetwater_CRM": ["4D", "MySQL", "Postgres", "Python"],
     "Lincoln": ["Hardware support", "Javascript", "End user support"],
     "Misc": ["Java", "Javascript", "Certified Python", "Datascience", "NodeJS", "NestJS", "MSSQL", "C", "C++", "C#"]
-  }
+  },
   "work": [
     {"company": "Sweetwater Sound", "title": "CDP Software Engineer", "id": "Sweetwater_CDP", "daterange": "Jan 2023-now", 
       "description": "The tech used in this role varied on the daily functions. This team was a heavy focus on greenfield applications centered around combining data sources for aggregation based on business logic (and data models from our coordinating data science teams) to dispaly for our salespeople."},
