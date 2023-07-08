@@ -11,6 +11,6 @@
     {company: "Sweetwater Sound", title: "CRM Software Engineer", id: "Sweetwater_CRM", daterange: "May 2021-Jan 2023", 
       description: "The tech used in this role consisted of primarily 4D, a legacy proprietary language. My role was targeted towards the internal CRM built for handling customers and invoices/quotes. I built out new features for handling duplicate logic, commissions, shipping UX, and more. I also tackled our software used by our diner on campus."},
     {company: "Lincoln Financial Group", title: "End User Operations", id: "Lincoln", daterange: "June 2018-May 2021", 
-      description: "In this role, I focused primarily on helping end users debug application issues, troubleshoot hardware, remotely assist users, and manage basic help desk tickets. I also built out a web app for fairly distributing shipping workloads across main campuses during covid time -- it gave a good introductory into applied graph theory"},
+      description: "In this role, I focused primarily on helping end users debug application issues, troubleshoot hardware, remotely assist users, and manage basic help desk tickets. I also built out a web app for fairly distributing shipping workloads across main campuses during covid time -- it gave a good introductory into applied graph theory"}
   ]
 }
