@@ -1,0 +1,8 @@
+{
+  "tags": {
+    "Sweetwater_CDP": ["GoLang", "4D", "React", "Tailwind CSS", "Microservices", "Fullstack", "BigQuery", "Postgres", "MySQL"],
+    "Sweetwater_CRM": ["4D", "MySQL", "Postgres", "Python"],
+    "Lincoln": ["Hardware support", "Javascript", "End user support"],
+    "Misc": ["Java", "Javascript", "Certified Python", "Datascience", "NodeJS", "NestJS", "MSSQL", "C", "C++", "C#"]
+  }
+}
