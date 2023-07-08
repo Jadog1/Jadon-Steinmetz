@@ -1,8 +1,237 @@
 <!DOCTYPE html>
 <html>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <body>
 
-<h1>This is a work in progress, and is currently being worked on <a href="https://codepen.io/Jadog/pen/oNQePQj">here</a></h1>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<div class="grid grid-cols-none grid-rows-none md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 gap-4 min-h-screen md:h-screen w-screen bg-slate-200 w-screen">
 
+  <!-- Start about me/highlight section --->
+  <div class="shadow-xl border-2 border-slate-200 rounded bg-white md:overflow-auto md:row-span-2">
+    <br /><br />
+    <div class="transition ease-in-out delay-150 w-2/5 max-w-80 min-w-32 h-32 shadow-lg border-1 border-slate-100 m-auto shadow hover:bg-blue-300 bg-white hover:scale-110 ">
+      <img class="max-w-80 min-w-32 h-32 aspect-square m-auto" src="https://jadog1.github.io/Jadon-Steinmetz/JadonSteinmetz.png" />
+    </div>
+    <br />
+    <div class="w-4/5 overflow-auto m-auto" id="highlights">
+      <span class="text-md md:text-lg">
+        <p><i class="fa fa-briefcase text-yellow-600"></i>&emsp;Software Engineer</p>
+        <p><i class="fa fa-home text-yellow-600"></i>&emsp;Fort Wayne, IN</p>
+        <p><i class="fa fa-envelope text-yellow-600"></i>&emsp;ex@mail.com</p>
+        <p><i class="fa fa-phone text-yellow-600"></i>&emsp;1224435534</p>
+        <hr>
+
+        <h1 class="text-2xl text-bold w-full text-center">
+          Highlights
+        </h1>
+        <br />
+        <i class="fa-solid fa-server"></i>&emsp;Fullstack / Backend / Microservices <br />
+        <i class="fa-solid fa-language"></i>&emsp;Easily adapts to new tech stacks <br />
+        <i class="fa-solid fa-database"></i>&emsp;Well versed in big data/NoSql/SQL <br />
+        <i class="fa-solid fa-soap"></i>&emsp;Clean Code<br />
+        <i class="fa-solid fa-chalkboard"></i>&emsp;Passionate to continue to learn and grow <br />
+        <i class="fa-solid fa-square-root-variable"></i>&emsp;Love to study algorithms
+      </span>
+      <br />
+
+      <hr />
+      <h2 class="text-2xl w-full text-center">Key tech/info about me</h2>
+      <!-- These tags are auto-generated from json file -->
+      <div id="allTags"></div>
+    </div>
+  </div>
+
+  <!-- End about me/highlight section --->
+  <!-- Start work experience section --->
+
+  <div class="lg:col-span bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal">
+    <h1 class="text-2xl font-bold w-full text-center">
+      <i class="fa-solid fa-briefcase"></i> Work experience
+    </h1>
+    <hr />
+    <div id="workExperiences"></div>
+  </div>
+
+  <!-- End work experience section --->
+  <!-- Start education section --->
+
+  <div class="lg:col-span bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal">
+    <h1 class="text-2xl font-bold w-full text-center">
+      <i class="fa-solid fa-book-open-reader"></i> Education
+    </h1>
+    <hr />
+    <span class="text-lg">Purdue University Fort Wayne</span>
+    <span class="xl:hidden"><br /></span>
+    <span class="text-yellow-600 xl:float-right space-y-1"><i class="fa-regular fa-calendar-days"></i>&emsp;2018-2021</span>
+    <br />
+    <p>Bachelor's in computer science -- 3.63/4 GPA</p> <br />
+    <hr />
+    <span class="text-xl">Misc growth</span> <br />
+    <ul>
+      <li>- Growth in seniority via podcasts/books/training others</li>
+      <li>- Regular side projects for growth in tech skills</li>
+      <li>- Data science/ML studying from Coursera / Youtube / Pluralsight / Kaggle</li>
+      <li>- Studying/testing new design patterns</li>
+      <li>- Studying algorithms
+      <li>&emsp;- Datascience-related algorithms for neural networks/NLP</li>
+      <li>&emsp;- Physics</li>
+      <li>&emsp;- Performance-based algo's for optimizing O(n) efficiency</li>
+      </li>
+    </ul>
+  </div>
+
+  <!-- End education section --->
+  <!-- Start projects section --->
+
+  <div class="md:col-span-2 lg:col-span-2 bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal">
+    <h1 class="text-2xl font-bold w-full text-center">
+      <i class="fa-solid fa-laptop-code"></i> Projects
+    </h1>
+    <hr />
+    <div id="projects" class="grid grid-cols-none grid-rows-none md:grid-cols-2 md:grid-rows-2 gap-4">
+
+    </div>
+  </div>
+</div>
+
+  <script>
+    $(document).ready(function () {
+  $.ajax({
+    url: "https://jadog1.github.io/Jadon-Steinmetz/metadata.json",
+    cache: false,
+    dataType: "json"
+  })
+    .done(function (result) {
+      HandleMeta(result);
+    })
+    .catch(function (err) {
+      alert("Failed loading JSON");
+      console.error(err);
+    });
+});
+
+function HandleMeta(meta) {
+  GenerateWorkExperience(meta.work);
+  GenerateTags(meta.tags);
+  GenerateProjects(meta.projects);
+  EventHandlers();
+}
+
+function GenerateTags(loadedTags) {
+  let allTags = new Set();
+  for (const [key, tags] of Object.entries(loadedTags)) {
+    tags.forEach(allTags.add, allTags);
+    let parent = $("#" + key);
+    drawTags(parent, tags);
+  }
+  drawTags($("#allTags"), allTags);
+}
+
+function drawTags(parent, tags) {
+  tags.forEach((tag) => {
+    parent.append(
+      `<span class='px-2 py-1 rounded bg-blue-400 mt-2 inline-block'>${tag}</span>&ensp;`
+    );
+  });
+}
+
+function GenerateWorkExperience(loadedWork) {
+  for (let i = 0; i < loadedWork.length; i++) {
+    drawWorkExperience(loadedWork[i]);
+    if (i < loadedWork.length - 1) $("#workExperiences").append("<br /><hr />");
+  }
+}
+
+function drawWorkExperience(work) {
+  $("#workExperiences").append(`
+  <span class="text-lg text-blue-400 hover:underline underline-offset-2">
+  <a href="${work.companylink}">${work.company}</a>
+    </span>
+    <span class="xl:hidden"><br /></span>
+    <span class="text-yellow-600 float-right space-y-1"><i class="fa-regular fa-calendar-days"></i>&emsp;${work.daterange}</span>
+    <br />
+    <!-- Trigger button -->
+    <span class="relative">
+      <button type="button" class="popover-button px-2 py-1 rounded">${work.title} <i class="fa-solid fa-circle-info text-blue-800"></i>
+      </button>
+
+      <!-- Popover content -->
+      <div class="popover-content fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="p-2 bg-white rounded-lg shadow-lg max-w-xl">
+            ${work.description} <br/>
+            <button class='bg-blue-400 text-black px-2 py-1 float-right m-2' onclick='hideAllPopovers()'>
+            Close
+          </button>
+          </div>
+        </div>
+    </span>
+    <!-- End popover -->
+    <br />
+    <!-- These tags are auto-generated from json file -->
+    <div id="${work.id}"></div>
+  `);
+}
+
+function GenerateProjects(loadedProjects) {
+  for (let i = 0; i < loadedProjects.length; i++) {
+    drawProject(loadedProjects[i]);
+  }
+}
+
+function drawProject(project) {
+  $("#projects").append(`
+  <div class="border p-4 w-4/5 m-auto">
+    <h3 class="text-lg font-semibold w-full text-center text-blue-400 underline-2 hover:underline"><a href="${
+      project.link
+    }">${project.title}</a></h3>
+    <span class="hidden fullText">${project.description}</span>
+    <span class="hidden shortenedText">${project.description.slice(
+      0,
+      100
+    )}...</span>
+    <span class="project-description text-gray-600 mb-2">${project.description.slice(
+      0,
+      100
+    )}...</span>
+    <button class="text-blue-500 text-sm font-medium focus:outline-none">Read More</button> <br/>
+    ${project.tags
+      .map(
+        (value) =>
+          `<span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded p-1">${value}</span>`
+      )
+      .join("&ensp;")}
+    
+  </div>
+  `);
+}
+
+function EventHandlers() {
+  // Add event handlers to the popover buttons
+  $(".popover-button").on({
+    click: function () {
+      hideAllPopovers();
+      $(this).siblings(".popover-content").removeClass("hidden");
+    }
+  });
+
+  $(".project-description + button").on("click", function () {
+    let shortenedText = $(this).prevAll(".shortenedText").text();
+    let fullText = $(this).prevAll(".fullText").text();
+    console.log(shortenedText);
+    console.log(fullText);
+    $(this).text(function (_, text) {
+      $(this)
+        .prev(".project-description")
+        .text(text == "Read More" ? fullText : shortenedText);
+      return text === "Read More" ? "Read Less" : "Read More";
+    });
+  });
+}
+function hideAllPopovers() {
+  $(".popover-content").addClass("hidden");
+}
+
+  </script>
 </body>
 </html>
