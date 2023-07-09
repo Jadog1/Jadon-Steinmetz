@@ -177,7 +177,7 @@ function drawWorkExperience(work) {
       </button>
 
       <!-- Popover content -->
-      <div class="popover-content fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+      <div class="popover-content fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-10">
         <div class="p-2 bg-white rounded-lg shadow-lg max-w-xl">
             ${work.description} <br/>
             <button class='bg-blue-400 text-black px-2 py-1 float-right m-2' onclick='hideAllPopovers()'>
@@ -206,10 +206,11 @@ function drawProject(project) {
     <h3 class="text-lg font-semibold w-full text-center text-blue-400 underline-2 hover:underline"><a href="${
       project.link
     }">${project.title}</a></h3>
+    <div class="mb-2">
     <span class="hidden fullText">${project.description}</span>
-    <span class="hidden shortenedText">${shortenedText}...</span>
-    <span class="shortened-description text-gray-600 mb-2">${shortenedText}...</span>
-    <button class="text-blue-500 text-sm font-medium focus:outline-none">Read More</button> <br/>
+    <span class="hidden shortenedText mb-4">${shortenedText}...</span>
+    <span class="shortened-description text-gray-600 mb-4">${shortenedText}...</span>
+    <button class="text-blue-500 text-sm font-medium focus:outline-none">Read More</button> </div>
     ${project.tags
       .map(
         (value) =>
@@ -244,6 +245,7 @@ function EventHandlers() {
 function hideAllPopovers() {
   $(".popover-content").addClass("hidden");
 }
+
   </script>
 </body>
 </html>
