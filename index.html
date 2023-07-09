@@ -7,11 +7,12 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<div class="grid grid-cols-none grid-rows-none md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 gap-4 min-h-screen md:h-screen w-screen bg-slate-200 w-screen">
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="grid grid-cols-none grid-rows-none md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 gap-4 min-h-screen overflow-y-auto bg-slate-200 max-w-screen px-2 py-1 md:px-4 md:py-2 overflow-x-hidden">
 
   <!-- Start about me/highlight section --->
-  <div class="shadow-xl border-2 border-slate-200 rounded bg-white md:overflow-auto md:row-span-2">
-    <br /><br />
+  <div class="shadow-xl border-2 border-slate-200 rounded bg-white md:overflow-auto md:row-span-2 col-span-1 py-2 px-4">
+    <br />
     <div class="transition ease-in-out delay-150 w-2/5 max-w-80 min-w-32 h-32 shadow-lg border-1 border-slate-100 m-auto shadow hover:bg-blue-300 bg-white hover:scale-110 ">
       <img class="max-w-80 min-w-32 h-32 aspect-square m-auto" src="https://jadog1.github.io/Jadon-Steinmetz/JadonSteinmetz.png" />
     </div>
@@ -20,8 +21,10 @@
       <span class="text-md md:text-lg">
         <p><i class="fa fa-briefcase text-yellow-600"></i>&emsp;Software Engineer</p>
         <p><i class="fa fa-home text-yellow-600"></i>&emsp;Fort Wayne, IN</p>
-        <p><i class="fa fa-envelope text-yellow-600"></i>&emsp;ex@mail.com</p>
-        <p><i class="fa fa-phone text-yellow-600"></i>&emsp;1224435534</p>
+        <p><i class="fa fa-envelope text-yellow-600"></i>&emsp;jadog123321@gmail.com</p>
+        <p><i class="fa-brands fa-linkedin text-yellow-600"></i>&emsp;
+          <a href="https://www.linkedin.com/in/jadon-steinmetz-21b7b81ab/" class="text-blue-400 underline-1 hover:underline">My Profile</a>
+        </p>
         <hr>
 
         <h1 class="text-2xl text-bold w-full text-center">
@@ -38,16 +41,19 @@
       <br />
 
       <hr />
-      <h2 class="text-2xl w-full text-center">Key tech/info about me</h2>
+      <h2 class="text-2xl w-full text-center">Tech tags</h2>
       <!-- These tags are auto-generated from json file -->
-      <div id="allTags"></div>
+      <div id="allTags" class="mb-2"></div>
+      <hr />
+      <h2 class="text-2xl w-full text-center">About me</h2>
+      <div id="aboutMe"></div>
     </div>
   </div>
 
   <!-- End about me/highlight section --->
   <!-- Start work experience section --->
 
-  <div class="lg:col-span bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal">
+  <div class="lg:col-span-1 bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal px-4 py-2">
     <h1 class="text-2xl font-bold w-full text-center">
       <i class="fa-solid fa-briefcase"></i> Work experience
     </h1>
@@ -58,14 +64,14 @@
   <!-- End work experience section --->
   <!-- Start education section --->
 
-  <div class="lg:col-span bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal">
+  <div class="lg:col-span-1 bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal px-4 py-2">
     <h1 class="text-2xl font-bold w-full text-center">
       <i class="fa-solid fa-book-open-reader"></i> Education
     </h1>
     <hr />
     <span class="text-lg">Purdue University Fort Wayne</span>
-    <span class="xl:hidden"><br /></span>
-    <span class="text-yellow-600 xl:float-right space-y-1"><i class="fa-regular fa-calendar-days"></i>&emsp;2018-2021</span>
+    <span class="lg:hidden"><br /></span>
+    <span class="text-yellow-600 lg:float-right space-y-1"><i class="fa-regular fa-calendar-days"></i>&emsp;2018-2021</span>
     <br />
     <p>Bachelor's in computer science -- 3.63/4 GPA</p> <br />
     <hr />
@@ -86,12 +92,12 @@
   <!-- End education section --->
   <!-- Start projects section --->
 
-  <div class="md:col-span-2 lg:col-span-2 bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal">
+  <div class="md:col-span-2 bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal px-4 py-2">
     <h1 class="text-2xl font-bold w-full text-center">
       <i class="fa-solid fa-laptop-code"></i> Projects
     </h1>
     <hr />
-    <div id="projects" class="grid grid-cols-none grid-rows-none md:grid-cols-2 md:grid-rows-2 gap-4">
+    <div id="projects" class="grid grid-cols-none grid-rows-none md:grid-cols-2 md:grid-rows-2 gap-4 py-2 px-2">
 
     </div>
   </div>
@@ -117,7 +123,19 @@ function HandleMeta(meta) {
   GenerateWorkExperience(meta.work);
   GenerateTags(meta.tags);
   GenerateProjects(meta.projects);
+  GenerateAboutMe(meta.aboutMe);
   EventHandlers();
+}
+
+function GenerateAboutMe(loadedInfo) {
+  let shortenedText = loadedInfo.slice(0, 200);
+
+  $("#aboutMe").append(`
+  <span class="hidden fullText">${loadedInfo}</span>
+    <span class="hidden shortenedText">${shortenedText}...</span>
+    <span class="shortened-description text-gray-600 mb-2">${shortenedText}...</span>
+    <button class="text-blue-500 text-sm font-medium focus:outline-none">Read More</button>
+  `);
 }
 
 function GenerateTags(loadedTags) {
@@ -133,7 +151,7 @@ function GenerateTags(loadedTags) {
 function drawTags(parent, tags) {
   tags.forEach((tag) => {
     parent.append(
-      `<span class='px-2 py-1 rounded bg-blue-400 mt-2 inline-block'>${tag}</span>&ensp;`
+      `<span class='px-2 py-1 rounded bg-blue-400 mt-2 mr-2 inline-block'>${tag}</span>`
     );
   });
 }
@@ -150,12 +168,12 @@ function drawWorkExperience(work) {
   <span class="text-lg text-blue-400 hover:underline underline-offset-2">
   <a href="${work.companylink}">${work.company}</a>
     </span>
-    <span class="xl:hidden"><br /></span>
-    <span class="text-yellow-600 float-right space-y-1"><i class="fa-regular fa-calendar-days"></i>&emsp;${work.daterange}</span>
+    <span class="lg:hidden"><br /></span>
+    <span class="text-yellow-600 lg:float-right space-y-1"><i class="fa-regular fa-calendar-days"></i>&emsp;${work.daterange}</span>
     <br />
     <!-- Trigger button -->
     <span class="relative">
-      <button type="button" class="popover-button px-2 py-1 rounded">${work.title} <i class="fa-solid fa-circle-info text-blue-800"></i>
+      <button type="button" class="popover-button py-1 rounded">${work.title} <i class="fa-solid fa-circle-info text-blue-800"></i>
       </button>
 
       <!-- Popover content -->
@@ -182,20 +200,15 @@ function GenerateProjects(loadedProjects) {
 }
 
 function drawProject(project) {
+  let shortenedText = project.description.slice(0, 100);
   $("#projects").append(`
   <div class="border p-4 w-4/5 m-auto">
     <h3 class="text-lg font-semibold w-full text-center text-blue-400 underline-2 hover:underline"><a href="${
       project.link
     }">${project.title}</a></h3>
     <span class="hidden fullText">${project.description}</span>
-    <span class="hidden shortenedText">${project.description.slice(
-      0,
-      100
-    )}...</span>
-    <span class="project-description text-gray-600 mb-2">${project.description.slice(
-      0,
-      100
-    )}...</span>
+    <span class="hidden shortenedText">${shortenedText}...</span>
+    <span class="shortened-description text-gray-600 mb-2">${shortenedText}...</span>
     <button class="text-blue-500 text-sm font-medium focus:outline-none">Read More</button> <br/>
     ${project.tags
       .map(
@@ -217,14 +230,12 @@ function EventHandlers() {
     }
   });
 
-  $(".project-description + button").on("click", function () {
+  $(".shortened-description + button").on("click", function () {
     let shortenedText = $(this).prevAll(".shortenedText").text();
     let fullText = $(this).prevAll(".fullText").text();
-    console.log(shortenedText);
-    console.log(fullText);
     $(this).text(function (_, text) {
       $(this)
-        .prev(".project-description")
+        .prev(".shortened-description")
         .text(text == "Read More" ? fullText : shortenedText);
       return text === "Read More" ? "Read Less" : "Read More";
     });
@@ -233,7 +244,6 @@ function EventHandlers() {
 function hideAllPopovers() {
   $(".popover-content").addClass("hidden");
 }
-
   </script>
 </body>
 </html>
