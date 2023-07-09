@@ -1,2 +1,2 @@
 # Jadon-Steinmetz
-My static page to show off project highlights
+A web based resume to showoff projects and information about me
