@@ -1,4 +1,5 @@
-{
+{ 
+  "aboutMe": "Passionate about jobs related to Software Engineering for business process, data science, and computer graphics. Always eager to learn new things and I love problem solving. I find myself spending free time learning how to apply new concepts, whether it's new design patterns (Been on a Clean Code kick as of late!), or popular algorithms. I love to approach problems, data first. My favorite form of learning comes in form of complex problems, whether that be exploring interesting algorithms, or architecting something to deploy well at scale with maintainability in mind.",
   "tags": {
     "Sweetwater_CDP": ["GoLang", "4D", "React", "Tailwind CSS", "Microservices", "Fullstack", "BigQuery", "Postgres", "MySQL"],
     "Sweetwater_CRM": ["4D", "MySQL", "Postgres", "Python"],
