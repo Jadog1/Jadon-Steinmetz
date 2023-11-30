@@ -1,30 +1,204 @@
-{ 
+{
   "aboutMe": "Passionate about jobs related to Software Engineering for business process, data science, and computer graphics. Always eager to learn new things and I love problem solving. I find myself spending free time learning how to apply new concepts, whether it's new design patterns (Been on a Clean Code kick as of late!), or popular algorithms. I love to approach problems, data first. My favorite form of learning comes in form of complex problems, whether that be exploring interesting algorithms, or architecting something to deploy well at scale with maintainability in mind.",
   "tags": {
-    "Sweetwater_CDP": ["GoLang", "4D", "React", "Tailwind CSS", "Microservices", "Fullstack", "BigQuery", "Postgres", "MySQL"],
-    "Sweetwater_CRM": ["4D", "MySQL", "Postgres", "Certified Python"],
-    "Lincoln": ["Hardware support", "Javascript", "End user support"],
-    "Misc": ["Java", "Javascript", "Certified Python", "Datascience", "NodeJS", "NestJS", "MSSQL", "C", "C++", "C#"]
+    "Sweetwater_CDP": [
+      "GoLang",
+      "4D",
+      "React",
+      "Tailwind CSS",
+      "Microservices",
+      "Fullstack",
+      "BigQuery",
+      "Postgres",
+      "MySQL",
+      "Certified Python",
+      "Datascience"
+    ],
+    "Sweetwater_CRM": [
+      "4D",
+      "MySQL",
+      "Postgres",
+      "Certified Python"
+    ],
+    "Lincoln": [
+      "Hardware support",
+      "Javascript",
+      "End user support"
+    ],
+    "Misc": [
+      "Java",
+      "Javascript",
+      "Certified Python",
+      "Datascience",
+      "NodeJS",
+      "NestJS",
+      "MSSQL",
+      "C",
+      "C++",
+      "C#"
+    ]
   },
   "work": [
-    {"company": "Sweetwater Sound", "title": "CDP Software Engineer", "id": "Sweetwater_CDP", "daterange": "Jan 2023-now", "companylink": "www.sweetwater.com",
-      "description": "The tech used in this role varied on the daily functions. This team was a heavy focus on greenfield applications centered around combining data sources for aggregation based on business logic (and data models from our coordinating data science teams) to display for our salespeople. As of late, I jump between enhancing microservices, building out integrations for 4D, and helping tackle some bigger projects."},
-    {"company": "Sweetwater Sound", "title": "CRM Software Engineer", "id": "Sweetwater_CRM", "daterange": "May 2021-Jan 2023", "companylink": "www.sweetwater.com",
-      "description": "The tech used in this role consisted of primarily 4D, a legacy proprietary language. My role was targeted towards the internal CRM that our company built out for handling customers and invoices/quotes. I worked on new features for handling duplicate logic, commissions, shipping UX, and more. I also tackled our software used by our diner on campus."},
-    {"company": "Lincoln Financial Group", "title": "End User Operations", "id": "Lincoln", "daterange": "June 2018-May 2021", "companylink": "www.lincolnfinancial.com",
-      "description": "In this role, I focused primarily on helping end users debug application issues, troubleshoot hardware, remotely assist users, and manage basic help desk tickets. I also built out a web app for fairly distributing shipping workloads across main campuses during covid time -- it gave a good introductory into applied graph theory."}
+    {
+      "company": "Sweetwater Sound",
+      "title": "CDP Software Engineer",
+      "id": "Sweetwater_CDP",
+      "daterange": "Jan 2023-now",
+      "companylink": "www.sweetwater.com",
+      "description": "The tech used in this role varied on the daily functions. This team was a heavy focus on greenfield applications centered around combining data sources for aggregation based on business logic (and data models from our coordinating data science teams) to display for our salespeople. As of late, I jump between enhancing microservices, building out integrations for 4D, and helping tackle some bigger projects."
+    },
+    {
+      "company": "Sweetwater Sound",
+      "title": "CRM Software Engineer",
+      "id": "Sweetwater_CRM",
+      "daterange": "May 2021-Jan 2023",
+      "companylink": "www.sweetwater.com",
+      "description": "The tech used in this role consisted of primarily 4D, a legacy proprietary language. My role was targeted towards the internal CRM that our company built out for handling customers and invoices/quotes. I worked on new features for handling duplicate logic, commissions, shipping UX, and more. I also tackled our software used by our diner on campus."
+    },
+    {
+      "company": "Lincoln Financial Group",
+      "title": "End User Operations",
+      "id": "Lincoln",
+      "daterange": "June 2018-May 2021",
+      "companylink": "www.lincolnfinancial.com",
+      "description": "In this role, I focused primarily on helping end users debug application issues, troubleshoot hardware, remotely assist users, and manage basic help desk tickets. I also built out a web app for fairly distributing shipping workloads across main campuses during covid time -- it gave a good introductory into applied graph theory."
+    }
   ],
-  "projects": [   
-    {"title": "Predictive Classifieds", "link": "", "tags": ["Work", "Contributing Dev", "GoLang", "4D", "BigQuery"], "description": "This project was a multi-team project in consuming data incoming from web and 4D via microservices, a custom built rule engine, integration into 4D, and lots of data validation. The end goal was to be able to predict a given category that a customer may fall under."},
-    {"title": "Sweetwater Duplicate Logic", "link": "", "tags": ["Work", "Lead Dev", "4D", "Python"], "description": "This project was a multi-piece project in gearing our custom CRM to apply modern principles in dupe detection. It was a mix of a local weighted deterministic model with a high emphasis on performance, paired with an asynchronous call to our data science team’s model used for deeper predictions."},
-    {"title": "Grocery App", "link": "http://jadon-realtimecommunicator.herokuapp.com/", "tags": ["Personal", "Actively Used", "TypeScript", "React", "NodeJS"], "description": "This project was built because I was tired of Kroger's grocery list not being realtime updates for when my wife and I go grocery shopping together. Using Kroger's API (which includes aisle information), I built an interface and backend/db for managing grocery lists, tracking shopping patterns, and a basic integrated chat platform"},
-    {"title": "Budgeting App", "link":"http://jadon-realtimecommunicator.herokuapp.com/", "tags": ["Personal", "IoT", "Actively Used", "TypeScript", "React", "NodeJS"], "description": "This project was built for managing finances. From the apps I did use, i was disappointed with the lack of graphing functionality. So, I built a budgeting app to track budgeting reminders, extensively customizable graphing, IoT support for our raspberry pi with a 'display mode', and envelope-style budgeting"},
-    {"title": "Google Foobar Challenge", "link": "https://foobar.withgoogle.com/", "tags": ["Personal", "Problem Solving", "Python"], "description": "Worked on the Google Foobar challenge on random invite from Google. It was a really fun time to dive deep into random algorithms and be tested on unknown test cases! I got through halfway round 4, mostly because I started the challenge and didn't have as much time as I thought I would. All in all, learned a lot, and it was a great way to challenge myself with time constraints."},
-    {"title": "Leetcode", "link": "https://leetcode.com/Jadog1/", "tags": ["Personal", "Problem Solving", "Python", "GoLang", "TypeScript"], "description": "I enjoy challenging myself to tougher problems on Leetcode. I have a couple accounts, and participate on them as I have time to regularly challenge my problem-solving skills."},
-    {"title": "Datascience", "link": "", "tags": ["Personal", "Learning"], "description": "This has been an ongoing side project for quite some time. Even before the big boom of ChatGPT, I have been interested in ML, NLP, and image processing. It's been my goal to understand the underlying math, and not just how to use the packages like Pandas/Numpy/Scikit learn (Although I am trying to learn the packages too!). This has kicked off much re-learning math principles, watching videos from Stanform on youtube, researching articles, and utilizing content online from Google, Kaggle, Coursera, and Pluralsight."},
-    {"title": "Typescript Code Challenge", "link": "", "tags": ["Work", "Group PDT", "NestJS", "React", "TypeScript", "MySQL"], "description": "This project was built to get group-wide interaction and competitiveness for doing leet-code like problems and comparing performance"},
-    {"title": "Sweetwater Commissions", "link": "", "tags": ["Work", "Lead Dev", "4D"], "description": "Refactored, debugged, and enhanced commission workflows for our salespeople."},
-    {"title": "Sweetwater Diner", "link": "", "tags": ["Work", "Lead Dev", "4D"], "description": "Maintained, scaled, and improved performance of legacy code to meet customer expectations, and to perform in such a way that allows for ease of use for customer. Enhanced communication with POS device for speed improvements, as well as improved logging of data."},
-    {"title": "Shipping Calculator", "link": "", "tags": ["Work", "Contributing Dev", "4D"], "description": "As part of a team of 3, we integrated a solution for refactoring how we calculated shipping internally, along with assisting a better asynchronous UI for a better UX."}
+  "projects": [
+    {
+      "title": "Matchmaking",
+      "link": "",
+      "tags": [
+        "Work",
+        "Contributing Dev",
+        "GoLang",
+        "BigQuery",
+        "Python",
+        "Datascience"
+      ],
+      "description": "This project consisted of building out pipelines and testing different algorithms in Golang using business logic, and building out a recommendation model in Python using SciKit Learn KNN and SVD. The end goal was to best recommend a salesperson to a customer based on their previous interactions with our company."
+    },
+    {
+      "title": "Predictive Classifieds",
+      "link": "",
+      "tags": [
+        "Work",
+        "Contributing Dev",
+        "GoLang",
+        "4D",
+        "BigQuery"
+      ],
+      "description": "This project was a multi-team project in consuming data incoming from web and 4D via microservices, a custom built rule engine, integration into 4D, and lots of data validation. The end goal was to be able to predict a given category that a customer may fall under."
+    },
+    {
+      "title": "Sweetwater Duplicate Logic",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead Dev",
+        "4D",
+        "Python"
+      ],
+      "description": "This project was a multi-piece project in gearing our custom CRM to apply modern principles in dupe detection. It was a mix of a local weighted deterministic model with a high emphasis on performance, paired with an asynchronous call to our data science team’s model used for deeper predictions."
+    },
+    {
+      "title": "Grocery App",
+      "link": "http://jadon-realtimecommunicator.herokuapp.com/",
+      "tags": [
+        "Personal",
+        "Actively Used",
+        "TypeScript",
+        "React",
+        "NodeJS"
+      ],
+      "description": "This project was built because I was tired of Kroger's grocery list not being realtime updates for when my wife and I go grocery shopping together. Using Kroger's API (which includes aisle information), I built an interface and backend/db for managing grocery lists, tracking shopping patterns, and a basic integrated chat platform"
+    },
+    {
+      "title": "Budgeting App",
+      "link": "http://jadon-realtimecommunicator.herokuapp.com/",
+      "tags": [
+        "Personal",
+        "IoT",
+        "Actively Used",
+        "TypeScript",
+        "React",
+        "NodeJS"
+      ],
+      "description": "This project was built for managing finances. From the apps I did use, i was disappointed with the lack of graphing functionality. So, I built a budgeting app to track budgeting reminders, extensively customizable graphing, IoT support for our raspberry pi with a 'display mode', and envelope-style budgeting"
+    },
+    {
+      "title": "Google Foobar Challenge",
+      "link": "https://foobar.withgoogle.com/",
+      "tags": [
+        "Personal",
+        "Problem Solving",
+        "Python"
+      ],
+      "description": "Worked on the Google Foobar challenge on random invite from Google. It was a really fun time to dive deep into random algorithms and be tested on unknown test cases! I got through halfway round 4, mostly because I started the challenge and didn't have as much time as I thought I would. All in all, learned a lot, and it was a great way to challenge myself with time constraints."
+    },
+    {
+      "title": "Leetcode",
+      "link": "https://leetcode.com/Jadog1/",
+      "tags": [
+        "Personal",
+        "Problem Solving",
+        "Python",
+        "GoLang",
+        "TypeScript"
+      ],
+      "description": "I enjoy challenging myself to tougher problems on Leetcode. I have a couple accounts, and participate on them as I have time to regularly challenge my problem-solving skills."
+    },
+    {
+      "title": "Datascience",
+      "link": "",
+      "tags": [
+        "Personal",
+        "Learning"
+      ],
+      "description": "This has been an ongoing side project for quite some time. Even before the big boom of ChatGPT, I have been interested in ML, NLP, and image processing. It's been my goal to understand the underlying math, and not just how to use the packages like Pandas/Numpy/Scikit learn (Although I am trying to learn the packages too!). This has kicked off much re-learning math principles, watching videos from Stanform on youtube, researching articles, and utilizing content online from Google, Kaggle, Coursera, and Pluralsight."
+    },
+    {
+      "title": "Typescript Code Challenge",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead Dev",
+        "NestJS",
+        "React",
+        "TypeScript",
+        "MySQL"
+      ],
+      "description": "This internal website was built to get group-wide interaction and competitiveness for doing leet-code like problems and comparing performance against other developers. It also opened up sem-regular meetings to discuss code choices on different problems."
+    },
+    {
+      "title": "Sweetwater Commissions",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead Dev",
+        "4D"
+      ],
+      "description": "Refactored, debugged, and enhanced commission workflows for our salespeople."
+    },
+    {
+      "title": "Sweetwater Diner",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead Dev",
+        "4D"
+      ],
+      "description": "Maintained, scaled, and improved performance of legacy code to meet customer expectations, and to perform in such a way that allows for ease of use for customer. Enhanced communication with POS device for speed improvements, as well as improved logging of data."
+    },
+    {
+      "title": "Shipping Calculator",
+      "link": "",
+      "tags": [
+        "Work",
+        "Contributing Dev",
+        "4D"
+      ],
+      "description": "As part of a team of 3, we integrated a solution for refactoring how we calculated shipping internally, along with assisting a better asynchronous UI for a better UX."
+    }
   ]
 }
