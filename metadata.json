@@ -91,6 +91,16 @@
       "description": "This project was a multi-team project in consuming data incoming from web and 4D via microservices, a custom built rule engine, integration into 4D, and lots of data validation. The end goal was to be able to predict a given category that a customer may fall under."
     },
     {
+      "title": "Bible Modeling",
+      "link": "",
+      "tags": [
+        "Personal",
+        "Python",
+        "Datascience"
+      ],
+      "description": "This project consists of building a few modeling techniques using NLP to perform semantic search given any topic or prayer request in the Bible. The thought behind this was to enable linking of prayer requests to verses (or sections) during a bible study. In future iterations, I hope to add sentiment analysis as well."
+    },
+    {
       "title": "Sweetwater Duplicate Logic",
       "link": "",
       "tags": [
