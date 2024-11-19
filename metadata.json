@@ -1,9 +1,10 @@
 {
-  "aboutMe": "Passionate about jobs related to Software Engineering for business process, data science, and computer graphics. Always eager to learn new things and I love problem solving. I find myself spending free time learning how to apply new concepts, whether it's new design patterns (Been on a Clean Code kick as of late!), or popular algorithms. I love to approach problems, data first. My favorite form of learning comes in form of complex problems, whether that be exploring interesting algorithms, or architecting something to deploy well at scale with maintainability in mind.",
+  "aboutMe": "Passionate about software. Specifically, distributed systems and machine learning. Always eager to learn new things and I love problem solving. I find myself spending free time learning how to apply new concepts, whether it's new design patterns (Been on a Clean Code kick as of late!), or popular algorithms. I love to approach problems, data first. My favorite form of learning comes in form of complex problems, whether that be exploring interesting algorithms, or architecting something to deploy well at scale with maintainability in mind.",
   "tags": {
     "Sweetwater_CDP": [
       "GoLang",
       "4D",
+      "Machine Learning",
       "React",
       "Tailwind CSS",
       "Microservices",
@@ -45,7 +46,7 @@
       "id": "Sweetwater_CDP",
       "daterange": "Jan 2023-now",
       "companylink": "www.sweetwater.com",
-      "description": "The tech used in this role varied on the daily functions. This team was a heavy focus on greenfield applications centered around combining data sources for aggregation based on business logic (and data models from our coordinating data science teams) to display for our salespeople. As of late, I jump between enhancing microservices, building out integrations for 4D, and helping tackle some bigger projects."
+      "description": "The tech used in this role varied on the daily functions. This team was a heavy focus on greenfield applications centered around combining data sources for aggregation based on business logic (and data models from our coordinating data science teams) to display for our salespeople. As of late, I jump between designing microservices, leading integrations for 4D, and building ML models to improve our systems."
     },
     {
       "company": "Sweetwater Sound",
@@ -66,7 +67,7 @@
   ],
   "projects": [
     {
-      "title": "Matchmaking",
+      "title": "Matchmaking Backend",
       "link": "",
       "tags": [
         "Work",
@@ -79,7 +80,29 @@
       "description": "This project consisted of building out pipelines and testing different algorithms in Golang using business logic, and building out a recommendation model in Python using SciKit Learn KNN and SVD. The end goal was to best recommend a salesperson to a customer based on their previous interactions with our company."
     },
     {
-      "title": "Predictive Classifieds",
+      "title": "Predictively Classifying Customers",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead",
+        "Machine Learning",
+        "LightGBM",
+        "BigQuery"
+      ],
+      "description": "I built a multi-label classifier using LightGBM using pre-labeled data. With this, our team is able to feed our existing customer matching systems. With precision being our main target metric, it is able to fill in the gaps where the existing rule engine could not classify a customer."
+    },
+    {
+      "title": "Matchmaking Integration",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead Dev",
+        "4D"
+      ],
+      "description": "Architected and led a team of developers on integrating an external service to pair thousands of customers daily to a thousand salespeople using an asynchronous design pattern."
+    },
+    {
+      "title": "Rule-engine deterministic Classifieds",
       "link": "",
       "tags": [
         "Work",
