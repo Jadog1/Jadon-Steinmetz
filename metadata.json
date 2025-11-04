@@ -1,5 +1,41 @@
 {
   "aboutMe": "Passionate about software. Specifically, distributed systems and machine learning. Always eager to learn new things and I love problem solving. I find myself spending free time learning how to apply new concepts, whether it's new design patterns (Been on a Clean Code kick as of late!), or popular algorithms. I love to approach problems, data first. My favorite form of learning comes in form of complex problems, whether that be exploring interesting algorithms, or architecting something to deploy well at scale with maintainability in mind.",
+  "tagOrder": {
+    "categories": [
+      {
+        "name": "Project Type",
+        "tags": ["Work", "Personal", "Lead", "Lead Dev", "Contributing Dev", "Actively Used", "Learning"]
+      },
+      {
+        "name": "Languages",
+        "tags": ["GoLang", "Python", "TypeScript", "Javascript", "C#", "Dart", "Java", "C", "C++"]
+      },
+      {
+        "name": "Machine Learning & AI",
+        "tags": ["Machine Learning", "LLMs", "RAG", "Agentic Workflow", "Datascience", "Semantic Search", "AI-Assisted Development", "Tensorflow", "LightGBM", "Sklearn", "Pytorch"]
+      },
+      {
+        "name": "Databases",
+        "tags": ["BigQuery", "Redis", "Postgres", "MySQL", "MongoDB", "Firestore", "SQLite", "PGVector"]
+      },
+      {
+        "name": "Frontend",
+        "tags": ["React", "Flutter", "Tailwind CSS"]
+      },
+      {
+        "name": "Backend & Infrastructure",
+        "tags": ["Microservices", "GCP", "Kubernetes", "Google Pubsub", "Kafka", "Real-time Processing"]
+      },
+      {
+        "name": "Tools & Frameworks",
+        "tags": ["NodeJS", "NestJS", "DataDog", "4D", "Internal Tools", "IoT"]
+      },
+      {
+        "name": "Other",
+        "tags": ["Problem Solving", "Fullstack", "Certified Python", "MSSQL", "Hardware support", "End user support"]
+      }
+    ]
+  },
   "tags": {
     "Sweetwater_Senior_Backend": [
       "GoLang",

@@ -13,19 +13,18 @@ $(document).ready(function () {
       });
   });
   
-  let allProjects = []; // Store all projects globally for filtering
-  
-  function HandleMeta(meta) {
-    allProjects = meta.projects; // Store projects
-    GenerateWorkExperience(meta.work);
-    GenerateTags(meta.tags);
-    GenerateProjectTagFilters(meta.projects); // Generate filter buttons
-    GenerateProjects(meta.projects);
-    GenerateAboutMe(meta.aboutMe);
-    EventHandlers();
-  }
-  
-  function GenerateAboutMe(loadedInfo) {
+let allProjects = []; // Store all projects globally for filtering
+
+function HandleMeta(meta) {
+  window.metaData = meta; // Store metadata globally for tag ordering
+  allProjects = meta.projects; // Store projects
+  GenerateWorkExperience(meta.work);
+  GenerateTags(meta.tags);
+  GenerateProjectTagFilters(meta.projects); // Generate filter buttons
+  GenerateProjects(meta.projects);
+  GenerateAboutMe(meta.aboutMe);
+  EventHandlers();
+}  function GenerateAboutMe(loadedInfo) {
     let shortenedText = loadedInfo.slice(0, 200);
   
     $("#aboutMe").append(`
@@ -55,29 +54,45 @@ $(document).ready(function () {
     });
   }
   
-  function GenerateProjectTagFilters(projects) {
-    // Collect all unique tags from projects
-    let allTags = new Set();
-    projects.forEach(project => {
-      project.tags.forEach(tag => allTags.add(tag));
-    });
-    
-    let sortedTags = Array.from(allTags).sort((a, b) => a.localeCompare(b));
-    
-    // Add "All" button first
-    $("#projectTagFilters").append(
-      `<button class="tag-filter-btn active px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 hover:text-black" data-tag="all">All</button>`
-    );
-    
-    // Add individual tag buttons
-    sortedTags.forEach(tag => {
-      $("#projectTagFilters").append(
-        `<button class="tag-filter-btn px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 hover:text-black" data-tag="${tag}">${tag}</button>`
-      );
+function GenerateProjectTagFilters(projects) {
+  // Collect all unique tags from projects
+  let allTags = new Set();
+  projects.forEach(project => {
+    project.tags.forEach(tag => allTags.add(tag));
+  });
+  
+  // Get ordered tags from metadata if available
+  let orderedTags = [];
+  let remainingTags = new Set(allTags);
+  
+  // If tagOrder exists in metadata, use it to order tags
+  if (window.metaData && window.metaData.tagOrder && window.metaData.tagOrder.categories) {
+    window.metaData.tagOrder.categories.forEach(category => {
+      category.tags.forEach(tag => {
+        if (allTags.has(tag)) {
+          orderedTags.push(tag);
+          remainingTags.delete(tag);
+        }
+      });
     });
   }
   
-  function FilterProjects(selectedTag) {
+  // Append any remaining tags that weren't in the order list (sorted alphabetically)
+  let sortedRemaining = Array.from(remainingTags).sort((a, b) => a.localeCompare(b));
+  orderedTags = orderedTags.concat(sortedRemaining);
+  
+  // Add "All" button first
+  $("#projectTagFilters").append(
+    `<button class="tag-filter-btn active px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 hover:text-black" data-tag="all">All</button>`
+  );
+  
+  // Add individual tag buttons in order
+  orderedTags.forEach(tag => {
+    $("#projectTagFilters").append(
+      `<button class="tag-filter-btn px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 hover:text-black" data-tag="${tag}">${tag}</button>`
+    );
+  });
+}  function FilterProjects(selectedTag) {
     let filteredProjects = selectedTag === "all" 
       ? allProjects 
       : allProjects.filter(project => project.tags.includes(selectedTag));
