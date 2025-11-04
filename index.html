@@ -1,141 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jadon Steinmetz Resume</title>
+  <title>Jadon Steinmetz - Software Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<body>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in',
+            'slide-up': 'slideUp 0.6s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: #f8f9fa;
+    }
+    .card-shadow {
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.12);
+    }
+    .card-shadow:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.08);
+    }
+    .tag-filter-btn {
+      transition: all 0.2s ease;
+    }
+    .tag-filter-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .tag-filter-btn.active {
+      background: #1f2937;
+      color: white;
+      border-color: #1f2937;
+    }
+    .project-card {
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .accent-line {
+      height: 3px;
+      width: 40px;
+      background: #3b82f6;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<script src="https://cdn.tailwindcss.com"></script>
-<div class="grid grid-cols-none grid-rows-none md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 gap-4 min-h-screen overflow-y-auto bg-slate-200 max-w-screen px-2 py-1 md:px-4 md:py-2 overflow-x-hidden">
+<div class="grid grid-cols-none grid-rows-none md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 gap-5 min-h-screen overflow-y-auto max-w-screen px-4 py-6 md:px-6 md:py-8 overflow-x-hidden animate-fade-in">
 
   <!-- Start about me/highlight section --->
-  <div class="shadow-xl border-2 border-slate-200 rounded bg-white md:overflow-auto md:row-span-2 col-span-1 py-2 px-4">
-    <br />
-    <div class="transition ease-in-out delay-150 w-2/5 max-w-80 min-w-32 h-32 shadow-lg border-1 border-slate-100 m-auto shadow hover:bg-blue-300 bg-white hover:scale-110 ">
-      <img class="max-w-80 min-w-32 h-32 aspect-square m-auto" src="public/img/JadonSteinmetz.png" />
+  <div class="bg-white card-shadow rounded-lg md:overflow-auto md:row-span-2 col-span-1 py-6 px-6 animate-slide-up">
+    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-gray-100 shadow-md">
+      <img class="w-full h-full object-cover" src="public/img/JadonSteinmetz.png" alt="Jadon Steinmetz" />
     </div>
-    <br />
-    <div class="w-4/5 overflow-auto m-auto" id="highlights">
-      <span class="text-md md:text-lg">
-        <div class="grid grid-cols-12 gap-4 items-center mb-2">
-          <i class="col-span-1 fa fa-briefcase text-yellow-600"></i>
-          <span class="col-span-11">Software Engineer</span>
+    <div class="w-full overflow-auto m-auto" id="highlights">
+      <div class="space-y-2 text-sm md:text-base mb-6">
+        <div class="flex items-center gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa fa-briefcase text-blue-600 text-lg"></i>
+          <span class="font-medium text-gray-800">Software Engineer</span>
         </div>
-        <div class="grid grid-cols-12 gap-4 items-center mb-2">
-          <i class="col-span-1 fa fa-home text-yellow-600"></i>
-          <span class="col-span-11">Fort Wayne, IN</span>
+        <div class="flex items-center gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa fa-home text-blue-600 text-lg"></i>
+          <span class="text-gray-700">Fort Wayne, IN</span>
         </div>
-        <div class="grid grid-cols-12 gap-4 items-center mb-2">
-          <i class="col-span-1 fa fa-envelope text-yellow-600"></i>
-          <span class="col-span-11">jadonsteinmetz161@gmail.com</span>
+        <div class="flex items-center gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa fa-envelope text-blue-600 text-lg"></i>
+          <span class="text-gray-700 break-all text-sm">jadonsteinmetz161@gmail.com</span>
         </div>
-        <div class="grid grid-cols-12 gap-4 items-center mb-2">
-          <i class="col-span-1 fa-brands fa-linkedin text-yellow-600"></i>
-          <a href="https://www.linkedin.com/in/jadon-steinmetz-21b7b81ab/" class="col-span-11 text-blue-400 underline-1 hover:underline">My Profile</a>
+        <div class="flex items-center gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa-brands fa-linkedin text-blue-600 text-lg"></i>
+          <a href="https://www.linkedin.com/in/jadon-steinmetz-21b7b81ab/" class="text-blue-600 hover:text-blue-700 hover:underline transition">My Profile</a>
         </div>
-        <div class="grid grid-cols-12 gap-4 items-center mb-2">
-          <i class="col-span-1 fa-solid fa-pen-nib text-yellow-600"></i>
-          <a href="https://medium.com/@jadog123321" class="col-span-11 text-blue-400 underline-1 hover:underline">My Medium Articles</a>
+        <div class="flex items-center gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa-solid fa-pen-nib text-blue-600 text-lg"></i>
+          <a href="https://medium.com/@jadog123321" class="text-blue-600 hover:text-blue-700 hover:underline transition">My Medium Articles</a>
         </div>
-        <hr class="my-4">
+      </div>
       
-        <h1 class="text-2xl font-bold w-full text-center mb-4">
-          Highlights
-        </h1>
-        <div class="grid grid-cols-12 gap-4 items-center mb-2">
-          <i class="col-span-1 fa-solid fa-server"></i>
-          <span class="col-span-11">Fullstack / Backend / Microservices / Machine Learning</span>
-        </div>
-        <div class="grid grid-cols-12 gap-4 items-center mb-2">
-          <i class="col-span-1 fa-solid fa-language"></i>
-          <span class="col-span-11">Easily adapts to new tech stacks</span>
-        </div>
-        <div class="grid grid-cols-12 gap-4 items-center mb-2">
-          <i class="col-span-1 fa-solid fa-database"></i>
-          <span class="col-span-11">Well versed in big data/NoSql/SQL</span>
-        </div>
-        <div class="grid grid-cols-12 gap-4 items-center mb-2">
-          <i class="col-span-1 fa-solid fa-soap"></i>
-          <span class="col-span-11">Clean Code</span>
-        </div>
-        <div class="grid grid-cols-12 gap-4 items-center mb-2">
-          <i class="col-span-1 fa-solid fa-chalkboard"></i>
-          <span class="col-span-11">Passionate to continue to learn and grow</span>
-        </div>
-        <div class="grid grid-cols-12 gap-4 items-center">
-          <i class="col-span-1 fa-solid fa-square-root-variable"></i>
-          <span class="col-span-11">Love to study algorithms</span>
-        </div>
-      </span>
+      <hr class="my-6 border-gray-200">
       
-      <br />
-
-      <hr />
-      <h2 class="text-2xl w-full text-center">Tech tags</h2>
+      <h1 class="text-2xl font-bold text-gray-900 text-center mb-2">
+        Highlights
+      </h1>
+      <div class="accent-line mb-6"></div>
+      
+      <div class="space-y-2 text-sm">
+        <div class="flex items-start gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa-solid fa-server text-gray-600 mt-0.5 text-sm"></i>
+          <span class="text-gray-700">Fullstack / Backend / Microservices / Machine Learning</span>
+        </div>
+        <div class="flex items-start gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa-solid fa-language text-gray-600 mt-0.5 text-sm"></i>
+          <span class="text-gray-700">Easily adapts to new tech stacks</span>
+        </div>
+        <div class="flex items-start gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa-solid fa-database text-gray-600 mt-0.5 text-sm"></i>
+          <span class="text-gray-700">Well versed in big data/NoSql/SQL</span>
+        </div>
+        <div class="flex items-start gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa-solid fa-soap text-gray-600 mt-0.5 text-sm"></i>
+          <span class="text-gray-700">Clean Code</span>
+        </div>
+        <div class="flex items-start gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa-solid fa-chalkboard text-gray-600 mt-0.5 text-sm"></i>
+          <span class="text-gray-700">Passionate to continue to learn and grow</span>
+        </div>
+        <div class="flex items-start gap-3 p-2 rounded hover:bg-gray-50 transition">
+          <i class="fa-solid fa-square-root-variable text-gray-600 mt-0.5 text-sm"></i>
+          <span class="text-gray-700">Love to study algorithms</span>
+        </div>
+      </div>
+      
+      <hr class="my-6 border-gray-200" />
+      <h2 class="text-xl font-bold text-gray-900 text-center mb-2">Tech Stack</h2>
+      <div class="accent-line mb-4"></div>
       <!-- These tags are auto-generated from json file -->
-      <div id="allTags" class="mb-2"></div>
-      <hr />
-      <h2 class="text-2xl w-full text-center">About me</h2>
-      <div id="aboutMe"></div>
+      <div id="allTags" class="mb-4 flex flex-wrap gap-2"></div>
+      <hr class="my-6 border-gray-200" />
+      <h2 class="text-xl font-bold text-gray-900 text-center mb-2">About Me</h2>
+      <div class="accent-line mb-4"></div>
+      <div id="aboutMe" class="text-gray-700 leading-relaxed text-sm"></div>
     </div>
   </div>
 
   <!-- End about me/highlight section --->
   <!-- Start work experience section --->
 
-  <div class="lg:col-span-1 bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal px-4 py-2">
-    <h1 class="text-2xl font-bold w-full text-center">
-      <i class="fa-solid fa-briefcase"></i> Work experience
+  <div class="lg:col-span-1 bg-white card-shadow rounded-lg overflow-y-auto overflow-x-hidden whitespace-normal px-6 py-6 animate-slide-up" style="animation-delay: 0.1s;">
+    <h1 class="text-2xl font-bold text-gray-900 text-center mb-2">
+      <i class="fa-solid fa-briefcase"></i> Work Experience
     </h1>
-    <hr />
-    <div id="workExperiences"></div>
+    <div class="accent-line mb-6"></div>
+    <div id="workExperiences" class="space-y-5"></div>
   </div>
 
   <!-- End work experience section --->
   <!-- Start education section --->
 
-  <div class="lg:col-span-1 bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal px-4 py-2">
-    <h1 class="text-2xl font-bold w-full text-center">
+  <div class="lg:col-span-1 bg-white card-shadow rounded-lg overflow-y-auto overflow-x-hidden whitespace-normal px-6 py-6 animate-slide-up" style="animation-delay: 0.2s;">
+    <h1 class="text-2xl font-bold text-gray-900 text-center mb-2">
       <i class="fa-solid fa-book-open-reader"></i> Education
     </h1>
-    <hr />
-    <span class="text-lg">Purdue University Fort Wayne</span>
-    <span class="lg:hidden"><br /></span>
-    <span class="text-yellow-600 lg:float-right space-y-1"><i class="fa-regular fa-calendar-days"></i>&emsp;2018-2021</span>
-    <br />
-    <p>Bachelor's in computer science -- 3.63/4 GPA</p> <br />
-    <hr />
-    <span class="text-xl">Misc growth</span> <br />
-    <ul>
-      <li>- Growth in seniority via podcasts/books/training others</li>
-      <li>- Regular side projects for growth in tech skills</li>
-      <li>- Data science/ML studying from Coursera / Youtube / Pluralsight / Kaggle</li>
-      <li>- Studying/testing new design patterns</li>
-      <li>- Studying algorithms
-      <li>&emsp;- Datascience-related algorithms for neural networks/NLP</li>
-      <li>&emsp;- Physics</li>
-      <li>&emsp;- Performance-based algo's for optimizing O(n) efficiency</li>
-      </li>
+    <div class="accent-line mb-6"></div>
+    <div class="mb-6 p-4 rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition">
+      <span class="text-lg font-semibold text-gray-900">Purdue University Fort Wayne</span>
+      <span class="lg:hidden"><br /></span>
+      <span class="text-gray-600 lg:float-right text-sm"><i class="fa-regular fa-calendar-days"></i>&emsp;2018-2021</span>
+      <br />
+      <p class="text-gray-700 mt-2 text-sm">Bachelor's in Computer Science — <span class="font-semibold text-gray-900">3.63/4 GPA</span></p>
+    </div>
+    <hr class="my-6 border-gray-200" />
+    <span class="text-lg font-bold text-gray-900">Continuous Growth</span> <br />
+    <ul class="mt-3 space-y-2 text-gray-700 text-sm">
+      <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-600 mt-0.5 text-xs"></i><span>Growth in seniority via podcasts/books/training others</span></li>
+      <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-600 mt-0.5 text-xs"></i><span>Regular side projects for growth in tech skills</span></li>
+      <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-600 mt-0.5 text-xs"></i><span>Data science/ML studying from Coursera / YouTube / Pluralsight / Kaggle</span></li>
+      <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-600 mt-0.5 text-xs"></i><span>Studying/testing new design patterns</span></li>
+      <li class="flex items-start gap-2"><i class="fa-solid fa-check text-blue-600 mt-0.5 text-xs"></i><span>Studying algorithms:</span></li>
+      <li class="ml-6 flex items-start gap-2"><i class="fa-solid fa-arrow-right text-gray-400 mt-0.5 text-xs"></i><span>Data science-related algorithms for neural networks/NLP</span></li>
+      <li class="ml-6 flex items-start gap-2"><i class="fa-solid fa-arrow-right text-gray-400 mt-0.5 text-xs"></i><span>Physics</span></li>
+      <li class="ml-6 flex items-start gap-2"><i class="fa-solid fa-arrow-right text-gray-400 mt-0.5 text-xs"></i><span>Performance-based algorithms for optimizing O(n) efficiency</span></li>
     </ul>
   </div>
 
   <!-- End education section --->
   <!-- Start projects section --->
 
-  <div class="md:col-span-2 bg-white shadow-xl border-2 border-slate-100 rounded overflow-y-auto overflow-x-hidden whitespace-normal px-4 py-2">
-    <h1 class="text-2xl font-bold w-full text-center">
+  <div class="md:col-span-2 bg-white card-shadow rounded-lg overflow-y-auto overflow-x-hidden whitespace-normal px-6 py-6 animate-slide-up" style="animation-delay: 0.3s;">
+    <h1 class="text-2xl font-bold text-gray-900 text-center mb-2">
       <i class="fa-solid fa-laptop-code"></i> Projects
     </h1>
-    <hr />
-    <div id="projects" class="grid grid-cols-none grid-rows-none md:grid-cols-2 md:grid-rows-2 gap-4 py-2 px-2">
+    <div class="accent-line mb-6"></div>
+    
+    <!-- Tag Filter Section -->
+    <div class="mb-6">
+      <h3 class="text-sm font-semibold mb-3 text-gray-700 uppercase tracking-wide">Filter by Tag</h3>
+      <div id="projectTagFilters" class="flex flex-wrap gap-2"></div>
+    </div>
+    
+    <div id="projects" class="grid grid-cols-none grid-rows-none md:grid-cols-2 lg:grid-cols-3 gap-5">
 
     </div>
   </div>
 </div>
 
-  <script src="public/js/index.js">
-  </script>
+<script src="public/js/index.js"></script>
 </body>
 </html>

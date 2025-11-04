@@ -1,6 +1,24 @@
 {
   "aboutMe": "Passionate about software. Specifically, distributed systems and machine learning. Always eager to learn new things and I love problem solving. I find myself spending free time learning how to apply new concepts, whether it's new design patterns (Been on a Clean Code kick as of late!), or popular algorithms. I love to approach problems, data first. My favorite form of learning comes in form of complex problems, whether that be exploring interesting algorithms, or architecting something to deploy well at scale with maintainability in mind.",
   "tags": {
+    "Sweetwater_Senior_Backend": [
+      "GoLang",
+      "Machine Learning",
+      "BigQuery",
+      "Redis",
+      "Postgres",
+      "MySQL",
+      "Python",
+      "Tensorflow",
+      "LightGBM",
+      "Sklearn",
+      "Microservices",
+      "Google Pubsub",
+      "DataDog",
+      "Kubernetes",
+      "GCP",
+      "Datascience"
+    ],
     "Sweetwater_CDP": [
       "GoLang",
       "4D",
@@ -36,15 +54,33 @@
       "MSSQL",
       "C",
       "C++",
-      "C#"
+      "C#",
+      "Dart",
+      "Flutter",
+      "MongoDB",
+      "Firestore",
+      "SQLite",
+      "PGVector",
+      "Pytorch",
+      "LLMs",
+      "RAG",
+      "Kafka"
     ]
   },
   "work": [
     {
       "company": "Sweetwater Sound",
+      "title": "Senior Backend Software Engineer",
+      "id": "Sweetwater_Senior_Backend",
+      "daterange": "2025-Present",
+      "companylink": "www.sweetwater.com",
+      "description": "Leading backend architecture and machine learning initiatives. Built scalable ML systems for customer classification, real-time CRM integration platforms in Go, and modernized legacy reporting systems using AI-assisted reverse engineering and BigQuery. Driving ML adoption through mentorship and cross-team collaboration while contributing to system architecture discussions."
+    },
+    {
+      "company": "Sweetwater Sound",
       "title": "CDP Software Engineer",
       "id": "Sweetwater_CDP",
-      "daterange": "Jan 2023-now",
+      "daterange": "Jan 2023-2025",
       "companylink": "www.sweetwater.com",
       "description": "The tech used in this role varied on the daily functions. This team was a heavy focus on greenfield applications centered around combining data sources for aggregation based on business logic (and data models from our coordinating data science teams) to display for our salespeople. As of late, I jump between designing microservices, leading integrations for 4D, and building ML models to improve our systems."
     },
@@ -67,6 +103,76 @@
   ],
   "projects": [
     {
+      "title": "Paper Prayer",
+      "link": "https://paper-prayer-af73d35b1629.herokuapp.com/",
+      "tags": [
+        "Personal",
+        "Agentic Workflow",
+        "Python",
+        "Flutter",
+        "React",
+        "PGVector",
+        "Postgres",
+        "RAG",
+        "LLMs",
+        "Semantic Search"
+      ],
+      "description": "Created an app that leverages agentic workflows, semantic search, RAG, and information extraction to streamline the process of managing a bible study group. Built with Python, PostgreSQL with PGVector, React, and Flutter for cross-platform support."
+    },
+    {
+      "title": "Real-time CRM Integration Platform",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead",
+        "GoLang",
+        "BigQuery",
+        "Microservices",
+        "GCP"
+      ],
+      "description": "Architected and delivered a real-time CRM integration platform to drive adoption of customer data platform. Built a scalable Go backend generating dynamic, config-driven customer lists and actions, enabling frictionless expansion and seamless integration into existing CRM workflows."
+    },
+    {
+      "title": "Multi-label Customer Classification ML System",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead",
+        "Machine Learning",
+        "LightGBM",
+        "Python",
+        "GoLang",
+        "Real-time Processing"
+      ],
+      "description": "Replaced rule-based customer classification with a scalable multi-label ML system trained on historical data, boosting customer coverage by 10%. Engineered a high-performance real-time batching architecture to serve hundreds of classification requests per second on a low compute footprint."
+    },
+    {
+      "title": "Legacy CRM Reporting System Modernization",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead",
+        "GoLang",
+        "BigQuery",
+        "Redis",
+        "AI-Assisted Development"
+      ],
+      "description": "Replaced a legacy CRM reporting system under C-suite direction, using AI-assisted reverse engineering to rebuild logic in BigQuery. Implemented atomic Redis caching in Go for O(1) lookups, and cut refresh time from multi-day runs to 30-minute intervals while improving flexibility and accuracy."
+    },
+    {
+      "title": "Flexible Analytics System",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead",
+        "GoLang",
+        "BigQuery",
+        "Datascience",
+        "Internal Tools"
+      ],
+      "description": "Developed a flexible analytics system used across internal applications, supporting scalable attribute extension and powering downstream data-science workflows. Enabled unified reporting and actionable insights."
+    },
+    {
       "title": "Matchmaking Backend",
       "link": "",
       "tags": [
@@ -78,18 +184,6 @@
         "Datascience"
       ],
       "description": "This project consisted of building out pipelines and testing different algorithms in Golang using business logic, and building out a recommendation model in Python using SciKit Learn KNN and SVD. The end goal was to best recommend a salesperson to a customer based on their previous interactions with our company."
-    },
-    {
-      "title": "Predictively Classifying Customers",
-      "link": "",
-      "tags": [
-        "Work",
-        "Lead",
-        "Machine Learning",
-        "LightGBM",
-        "BigQuery"
-      ],
-      "description": "I built a multi-label classifier using LightGBM using pre-labeled data. With this, our team is able to feed our existing customer matching systems. With precision being our main target metric, it is able to fill in the gaps where the existing rule engine could not classify a customer."
     },
     {
       "title": "Matchmaking Integration",
