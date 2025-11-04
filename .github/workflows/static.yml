@@ -23,13 +23,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4   # Update to latest major version
+        uses: actions/checkout@v4 
       - name: Setup Pages
-        uses: actions/configure-pages@v3  # v3 is latest for this action
+        uses: actions/configure-pages@v5  
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v2  # update to v2
+        uses: actions/upload-pages-artifact@v4 
         with:
           path: '.'  # upload your static content
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2  # v2 is latest
+        id: deployment  
+        uses: actions/deploy-pages@v4
