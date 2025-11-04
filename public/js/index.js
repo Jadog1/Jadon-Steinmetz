@@ -28,10 +28,7 @@ function HandleMeta(meta) {
     let shortenedText = loadedInfo.slice(0, 200);
   
     $("#aboutMe").append(`
-    <span class="hidden fullText">${loadedInfo}</span>
-      <span class="hidden shortenedText">${shortenedText}...</span>
-      <span class="shortened-description text-gray-700 mb-2">${shortenedText}...</span>
-      <button class="text-blue-600 text-sm font-semibold hover:text-blue-700 transition focus:outline-none">Read More</button>
+    <span class="fullText">${loadedInfo}</span>
     `);
   }
   
@@ -61,37 +58,61 @@ function GenerateProjectTagFilters(projects) {
     project.tags.forEach(tag => allTags.add(tag));
   });
   
-  // Get ordered tags from metadata if available
-  let orderedTags = [];
-  let remainingTags = new Set(allTags);
-  
-  // If tagOrder exists in metadata, use it to order tags
-  if (window.metaData && window.metaData.tagOrder && window.metaData.tagOrder.categories) {
-    window.metaData.tagOrder.categories.forEach(category => {
-      category.tags.forEach(tag => {
-        if (allTags.has(tag)) {
-          orderedTags.push(tag);
-          remainingTags.delete(tag);
-        }
-      });
-    });
-  }
-  
-  // Append any remaining tags that weren't in the order list (sorted alphabetically)
-  let sortedRemaining = Array.from(remainingTags).sort((a, b) => a.localeCompare(b));
-  orderedTags = orderedTags.concat(sortedRemaining);
-  
   // Add "All" button first
   $("#projectTagFilters").append(
     `<button class="tag-filter-btn active px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 hover:text-black" data-tag="all">All</button>`
   );
   
-  // Add individual tag buttons in order
-  orderedTags.forEach(tag => {
-    $("#projectTagFilters").append(
-      `<button class="tag-filter-btn px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 hover:text-black" data-tag="${tag}">${tag}</button>`
-    );
-  });
+  // If tagOrder exists in metadata, use it to create grouped categories
+  if (window.metaData && window.metaData.tagOrder && window.metaData.tagOrder.categories) {
+    let uncategorizedTags = new Set(allTags);
+    
+    window.metaData.tagOrder.categories.forEach((category, index) => {
+      let categoryTags = category.tags.filter(tag => allTags.has(tag));
+      
+      if (categoryTags.length > 0) {
+        // Add category label
+        $("#projectTagFilters").append(
+          `<div class="w-full mt-4 mb-2">
+            <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">${category.name}</h4>
+          </div>`
+        );
+        
+        // Add tags in this category
+        categoryTags.forEach(tag => {
+          $("#projectTagFilters").append(
+            `<button class="tag-filter-btn px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 hover:text-black" data-tag="${tag}">${tag}</button>`
+          );
+          uncategorizedTags.delete(tag);
+        });
+      }
+    });
+    
+    // Add any remaining uncategorized tags under "Other" if they exist
+    if (uncategorizedTags.size > 0) {
+      let sortedRemaining = Array.from(uncategorizedTags).sort((a, b) => a.localeCompare(b));
+      
+      $("#projectTagFilters").append(
+        `<div class="w-full mt-4 mb-2">
+          <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Other</h4>
+        </div>`
+      );
+      
+      sortedRemaining.forEach(tag => {
+        $("#projectTagFilters").append(
+          `<button class="tag-filter-btn px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 hover:text-black" data-tag="${tag}">${tag}</button>`
+        );
+      });
+    }
+  } else {
+    // Fallback: if no tagOrder, just sort alphabetically
+    let sortedTags = Array.from(allTags).sort((a, b) => a.localeCompare(b));
+    sortedTags.forEach(tag => {
+      $("#projectTagFilters").append(
+        `<button class="tag-filter-btn px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-700 text-sm font-medium hover:bg-gray-50 hover:text-black" data-tag="${tag}">${tag}</button>`
+      );
+    });
+  }
 }  function FilterProjects(selectedTag) {
     let filteredProjects = selectedTag === "all" 
       ? allProjects 
@@ -195,6 +216,12 @@ function GenerateProjectTagFilters(projects) {
       });
     });
     
+    // Toggle filter dropdown
+    $("#toggleFilters").on("click", function () {
+      $("#projectTagFilters").toggleClass("hidden");
+      $("#filterChevron").toggleClass("rotate-180");
+    });
+    
     // Tag filter buttons
     $(".tag-filter-btn").on("click", function () {
       // Remove active class from all buttons
@@ -204,6 +231,15 @@ function GenerateProjectTagFilters(projects) {
       
       // Get selected tag and filter
       let selectedTag = $(this).data("tag");
+      let displayTag = selectedTag === "all" ? "All" : selectedTag;
+      
+      // Update the filter button text to show selected tag
+      $("#selectedFilterTag").text(displayTag);
+      
+      // Hide the filter panel and rotate chevron back
+      $("#projectTagFilters").addClass("hidden");
+      $("#filterChevron").removeClass("rotate-180");
+      
       FilterProjects(selectedTag);
       
       // Re-attach event handlers for newly created elements

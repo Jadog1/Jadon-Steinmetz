@@ -51,6 +51,9 @@
       color: white;
       border-color: #1f2937;
     }
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
     .project-card {
       transition: all 0.3s ease;
     }
@@ -196,8 +199,13 @@
     
     <!-- Tag Filter Section -->
     <div class="mb-6">
-      <h3 class="text-sm font-semibold mb-3 text-gray-700 uppercase tracking-wide">Filter by Tag</h3>
-      <div id="projectTagFilters" class="flex flex-wrap gap-2"></div>
+      <button id="toggleFilters" class="w-full flex items-center justify-between px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg border border-gray-200 transition">
+        <span class="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+          <i class="fa-solid fa-filter mr-2"></i>Filter: <span id="selectedFilterTag" class="font-bold text-blue-600">All</span>
+        </span>
+        <i class="fa-solid fa-chevron-down transition-transform duration-200" id="filterChevron"></i>
+      </button>
+      <div id="projectTagFilters" class="hidden mt-3 p-4 bg-gray-50 rounded-lg border border-gray-200 flex flex-wrap gap-2"></div>
     </div>
     
     <div id="projects" class="grid grid-cols-none grid-rows-none md:grid-cols-2 lg:grid-cols-3 gap-5">
