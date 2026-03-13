@@ -4,35 +4,100 @@
     "categories": [
       {
         "name": "Project Type",
-        "tags": ["Work", "Personal", "Lead", "Lead Dev", "Contributing Dev", "Actively Used", "Learning"]
+        "tags": [
+          "Work",
+          "Personal",
+          "Lead",
+          "Lead Dev",
+          "Contributing Dev",
+          "Actively Used",
+          "Learning"
+        ]
       },
       {
         "name": "Languages",
-        "tags": ["GoLang", "Python", "TypeScript", "Javascript", "C#", "Dart", "Java", "C", "C++"]
+        "tags": [
+          "GoLang",
+          "Python",
+          "TypeScript",
+          "Javascript",
+          "C#",
+          "Dart",
+          "Java",
+          "C",
+          "C++"
+        ]
       },
       {
         "name": "Machine Learning & AI",
-        "tags": ["Machine Learning", "LLMs", "RAG", "Agentic Workflow", "Datascience", "Semantic Search", "AI-Assisted Development", "Tensorflow", "LightGBM", "Sklearn", "Pytorch"]
+        "tags": [
+          "Machine Learning",
+          "LLMs",
+          "RAG",
+          "Agentic Workflow",
+          "Datascience",
+          "Semantic Search",
+          "AI-Assisted Development",
+          "Tensorflow",
+          "LightGBM",
+          "Sklearn",
+          "Pytorch"
+        ]
       },
       {
         "name": "Databases",
-        "tags": ["BigQuery", "Redis", "Postgres", "MySQL", "MongoDB", "Firestore", "SQLite", "PGVector", "Neo4j"]
+        "tags": [
+          "BigQuery",
+          "Redis",
+          "Postgres",
+          "MySQL",
+          "MongoDB",
+          "Firestore",
+          "SQLite",
+          "PGVector",
+          "Neo4j"
+        ]
       },
       {
         "name": "Frontend",
-        "tags": ["React", "Flutter", "Tailwind CSS"]
+        "tags": [
+          "React",
+          "Flutter",
+          "Tailwind CSS"
+        ]
       },
       {
         "name": "Backend & Infrastructure",
-        "tags": ["Microservices", "GCP", "Kubernetes", "Google Pubsub", "Kafka", "Real-time Processing"]
+        "tags": [
+          "Microservices",
+          "GCP",
+          "Kubernetes",
+          "Google Pubsub",
+          "Kafka",
+          "Real-time Processing"
+        ]
       },
       {
         "name": "Tools & Frameworks",
-        "tags": ["NodeJS", "NestJS", "DataDog", "4D", "Internal Tools", "IoT"]
+        "tags": [
+          "NodeJS",
+          "NestJS",
+          "DataDog",
+          "4D",
+          "Internal Tools",
+          "IoT"
+        ]
       },
       {
         "name": "Other",
-        "tags": ["Problem Solving", "Fullstack", "Certified Python", "MSSQL", "Hardware support", "End user support"]
+        "tags": [
+          "Problem Solving",
+          "Fullstack",
+          "Certified Python",
+          "MSSQL",
+          "Hardware support",
+          "End user support"
+        ]
       }
     ]
   },
@@ -404,7 +469,7 @@
         "Real-time Processing",
         "Internal Tools"
       ],
-      "description": "Led the end-to-end development of a fraud detection platform capturing anomalous customer activity. Deployed a React/JS frontend and GoLang backend for v1, followed by a v2 ML update achieving 85% accuracy in order evaluation. Abstracted learned behavior into configurable rules for toggling at scale."
+      "description": "Led the end-to-end development of a fraud detection platform capturing anomalous customer activity. Deployed a React/JS frontend and GoLang backend for v1, followed by a v2 ML update achieving 85% accuracy in order evaluation using lightgbm and decision trees for explainability. Abstracted learned behavior into configurable rules for toggling at scale."
     },
     {
       "title": "Marketplace Customer Deduplication",

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadon Steinmetz - Resume</title>
+    <style>
+        :root {
+            --ink: #0f172a;
+            --muted: #475569;
+            --soft: #64748b;
+            --line: #cbd5e1;
+            --accent: #2563eb;
+            --accent-soft: #eff6ff;
+        }
+        @page {
+            margin: 0.42in;
+            size: letter;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 9.6pt;
+            line-height: 1.32;
+            color: var(--ink);
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+        }
+        h1, h2, h3, h4 {
+            margin: 0;
+            color: var(--ink);
+        }
+        .page {
+            padding: 18px 20px 16px;
+            border-top: 6px solid var(--accent);
+        }
+        h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+            letter-spacing: -0.7px;
+        }
+        h2 {
+            font-size: 10.2pt;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 4px;
+            margin-top: 12px;
+            margin-bottom: 7px;
+            color: var(--soft);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+        .headline {
+            font-size: 10.3pt;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.2px;
+        }
+        .contact-info {
+            font-size: 9.2pt;
+            color: var(--muted);
+            text-align: right;
+            line-height: 1.45;
+        }
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .summary {
+            margin-bottom: 10px;
+            padding: 8px 10px;
+            background: linear-gradient(135deg, var(--accent-soft), #ffffff 72%);
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            color: #1e293b;
+        }
+        .section {
+            margin-bottom: 10px;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 2px;
+        }
+        .item-title {
+            font-weight: 600;
+            font-size: 10.4pt;
+        }
+        .item-subtitle {
+            font-weight: 500;
+            font-style: italic;
+            color: var(--muted);
+        }
+        .item-date {
+            font-size: 9pt;
+            font-weight: 500;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+        ul {
+            margin: 0;
+            padding-left: 16px;
+            margin-top: 3px;
+            margin-bottom: 7px;
+        }
+        li {
+            margin-bottom: 2px;
+        }
+        li strong {
+            font-weight: 600;
+            color: var(--ink);
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 18px;
+        }
+        .skill-category {
+            margin-bottom: 0;
+            break-inside: avoid;
+        }
+        .skill-category strong {
+            color: var(--ink);
+        }
+        .job {
+            margin-bottom: 8px;
+        }
+        .role {
+            margin-top: 4px;
+        }
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 16px;
+            align-items: start;
+        }
+        .edu-item + .edu-item {
+            margin-top: 5px;
+        }
+        .project-list {
+            padding-left: 16px;
+            margin-bottom: 0;
+        }
+        .project-list li {
+            margin-bottom: 3px;
+        }
+        .project-list a {
+            color: var(--ink);
+            text-decoration: none;
+        }
+        .muted {
+            color: var(--muted);
+        }
+        @media print {
+            .page {
+                padding: 0;
+                border-top-width: 5px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="page">
+    <div class="header">
+        <div>
+            <h1>Jadon Steinmetz</h1>
+            <div class="headline">Backend engineer building ML-powered systems, real-time data products, and scalable distributed infrastructure</div>
+        </div>
+        <div class="contact-info">
+            jadonsteinmetz161@gmail.com<br>
+            (574) 360 7720 &nbsp;❖&nbsp; Fort Wayne, IN<br>
+            <a href="https://jadog1.github.io/Jadon-Steinmetz/">Portfolio</a>
+        </div>
+    </div>
+
+    <div class="summary">
+        Backend engineer with 5+ years of experience designing scalable services, training and productionizing machine learning models, and embedding intelligent data products directly into business workflows. Strong track record of turning ambiguous, high-impact problems into reliable systems with measurable operational value.
+    </div>
+
+    <div class="section">
+        <h2>Skills & Technologies</h2>
+        <div class="skills-grid">
+            <div class="skill-category"><strong>Languages:</strong> Go, Python, TypeScript, JavaScript, C#, Dart</div>
+            <div class="skill-category"><strong>ML / AI:</strong> RAG, agentic workflows, LightGBM, scikit-learn, PyTorch</div>
+            <div class="skill-category"><strong>Data:</strong> BigQuery, Postgres, Redis, MySQL, Neo4j, MongoDB, Firestore, SQLite, PGVector</div>
+            <div class="skill-category"><strong>Systems:</strong> Microservices, GCP, Kubernetes, Kafka, Google Pub/Sub, Docker, DataDog, React, Flutter</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Professional Experience</h2>
+        
+        <div class="job">
+            <div class="item-header">
+                <div class="item-title">Sweetwater</div>
+                <div class="item-date">May 2021 – Present</div>
+            </div>
+            
+            <div class="item-subtitle role">Senior Backend Software Engineer (2025 – Present)</div>
+            <ul>
+                <li><strong>Customer Deduplication ML & Inference Platform:</strong> Designed a pairwise model and retrieval layer using Siamese embeddings, reducing noisy duplicate records by 80% with real-time inference across Python, Go, Neo4j, and PGVector.</li>
+                <li><strong>Fraud Detection & Decisioning Platform:</strong> Led delivery of a fraud dashboard, lightgbm model to power it, and backend workflow that reached 85% order evaluation accuracy while surfacing explainable, configurable rules for operations teams.</li>
+                <li><strong>Embedded Customer Intelligence Platform:</strong> Built a real-time, event-driven Go/Postgres service that pushed customer insights from our web data platform directly into a legacy CRM through dynamic lists, actions, and background workflows-making new insights easy to add, significantly increasing adoption, and helping sales surface more opportunities.</li>
+                <li><strong>Customer Classification Model & Infrastructure:</strong> Built a model that classifies customers from items they interact with across web and CRM touchpoints, and architected the real-time infrastructure to serve those predictions at scale using normalized inventory embeddings.</li>
+                <li><strong>ML Enablement & Framework Onboarding:</strong> Authored documentation and practical examples for shared team packages that help other teams deploy Go services and use common helpers correctly, while also leading recurring ML learning sessions to grow production-minded machine learning knowledge.</li>
+                <li><strong>Reporting Modernization:</strong> Rebuilt a legacy reporting pipeline with BigQuery and Redis caching, cutting refresh times from multi-day processing to 30-minute intervals with more reliable metrics.</li>
+            </ul>
+
+            <div class="item-subtitle role">Software Engineer (May 2021 - 2025)</div>
+            <ul>
+                <li><strong>Matchmaking & Customer Intelligence:</strong> Helped build an asynchronous Go-based service pairing thousands of customers daily with sales representatives, with customer classification work creating richer behavioral signals that can strengthen recommendation quality.</li>
+                <li><strong>Marketplace Deduplication:</strong> Migrated a legacy Python process into optimized BigQuery SQL set logic, resolving edge cases and improving matching accuracy from 80-90% to 100%.</li>
+                <li><strong>Analytics Platform Rewrite:</strong> Modernized legacy analytics APIs in Go into a more dynamic service architecture, reducing friction for adding new tracked events and scaling downstream reporting use cases.</li>
+                <li><strong>Sales Continuity Workflows:</strong> Delivered backup note-entry workflows in the toolsite that let sales continue working during CRM outages, proving especially critical during high-volume periods like Black Friday.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bottom-grid">
+        <div class="section">
+            <h2>Education</h2>
+            <div class="edu-item">
+                <div class="item-header">
+                    <div><span class="item-title">Georgia Tech</span> &nbsp;|&nbsp; <em>M.S. Machine Learning</em></div>
+                    <div class="item-date">2026 - 2028</div>
+                </div>
+            </div>
+            <div class="edu-item">
+                <div class="item-header">
+                    <div><span class="item-title">Purdue Fort Wayne</span> &nbsp;|&nbsp; <em>B.S. Computer Science</em></div>
+                    <div class="item-date">2021</div>
+                </div>
+                <div class="muted">Graduated in 3 years • GPA: 3.67</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Selected Independent Projects</h2>
+            <ul class="project-list">
+                <li><strong><a href="https://paper-prayer-af73d35b1629.herokuapp.com/">Paper Prayer</a>:</strong> Built a Flutter/React platform using Python, RAG, agentic workflows, and PGVector-backed retrieval to organize and search study-group knowledge.</li>
+                <li><strong>Real-time Synchronized Apps:</strong> Developed budgeting, grocery, and IoT-focused applications with TypeScript, React, and Node.js emphasizing live collaboration and custom dashboard visualizations.</li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+</body>
+</html>
