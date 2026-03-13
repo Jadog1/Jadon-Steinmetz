@@ -16,7 +16,7 @@
       },
       {
         "name": "Databases",
-        "tags": ["BigQuery", "Redis", "Postgres", "MySQL", "MongoDB", "Firestore", "SQLite", "PGVector"]
+        "tags": ["BigQuery", "Redis", "Postgres", "MySQL", "MongoDB", "Firestore", "SQLite", "PGVector", "Neo4j"]
       },
       {
         "name": "Frontend",
@@ -53,7 +53,8 @@
       "DataDog",
       "Kubernetes",
       "GCP",
-      "Datascience"
+      "Datascience",
+      "Neo4j"
     ],
     "Sweetwater_CDP": [
       "GoLang",
@@ -166,7 +167,7 @@
         "Microservices",
         "GCP"
       ],
-      "description": "Architected and delivered a real-time CRM integration platform to drive adoption of customer data platform. Built a scalable Go backend generating dynamic, config-driven customer lists and actions, enabling frictionless expansion and seamless integration into existing CRM workflows."
+      "description": "Architected and delivered a real-time CRM integration platform (CDP Todo Lists) to drive adoption of customer data platform. Built a cross-system integration including dynamically generated lists, real-time updates, personalized lists based on permissions, and intent analytics. I built all sides of this implementation to ensure strong downstream internal system integrations."
     },
     {
       "title": "Multi-label Customer Classification ML System",
@@ -193,7 +194,7 @@
         "Redis",
         "AI-Assisted Development"
       ],
-      "description": "Replaced a legacy CRM reporting system under C-suite direction, using AI-assisted reverse engineering to rebuild logic in BigQuery. Implemented atomic Redis caching in Go for O(1) lookups, and cut refresh time from multi-day runs to 30-minute intervals while improving flexibility and accuracy."
+      "description": "Replaced a legacy CRM reporting system with a highly accurate BigQuery-driven pipeline. Implemented atomic Redis caching in Go for O(1) lookups, reducing data latency from multi-day runs to under an hour and resolving persistent calculation bugs from previous iterations."
     },
     {
       "title": "Flexible Analytics System",
@@ -206,7 +207,7 @@
         "Datascience",
         "Internal Tools"
       ],
-      "description": "Developed a flexible analytics system used across internal applications, supporting scalable attribute extension and powering downstream data-science workflows. Enabled unified reporting and actionable insights."
+      "description": "Overhauled our legacy analytics service in Golang to be highly dynamic, resolving a major bottleneck in adding new types of analytics. Designed a flexible system capable of capturing diverse analytics at scale while seamlessly coordinating with downstream teams to ensure minimal impact."
     },
     {
       "title": "Matchmaking Backend",
@@ -362,6 +363,70 @@
         "4D"
       ],
       "description": "As part of a team of 3, we integrated a solution for refactoring how we calculated shipping internally, along with assisting a better asynchronous UI for a better UX."
+    },
+    {
+      "title": "Customer Deduplication ML Model",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead",
+        "Machine Learning",
+        "Python",
+        "GoLang",
+        "Neo4j",
+        "Postgres",
+        "PGVector",
+        "Real-time Processing"
+      ],
+      "description": "Designed a pairwise model and retrieval layer using siamese neural networks for fast matching of duplicate records. Architected the real-time inference infrastructure to scale predictions using Python, Golang, Neo4j, and PGVector, decreasing noisy duplicates by 80% over the previous deterministic methodology."
+    },
+    {
+      "title": "Customer Classification Model v2",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead",
+        "Machine Learning",
+        "Python",
+        "Datascience"
+      ],
+      "description": "Re-engineered the customer classification feature pipeline by utilizing inventory embeddings to represent customers. This normalized embedding approach provides enhanced flexibility and captures a broader spectrum of product interactions compared to the v1 architecture."
+    },
+    {
+      "title": "Fraud Detection System & Dashboard",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead",
+        "Machine Learning",
+        "GoLang",
+        "Javascript",
+        "Real-time Processing",
+        "Internal Tools"
+      ],
+      "description": "Led the end-to-end development of a fraud detection platform capturing anomalous customer activity. Deployed a React/JS frontend and GoLang backend for v1, followed by a v2 ML update achieving 85% accuracy in order evaluation. Abstracted learned behavior into configurable rules for toggling at scale."
+    },
+    {
+      "title": "Marketplace Customer Deduplication",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead",
+        "BigQuery",
+        "Python",
+        "SQL"
+      ],
+      "description": "Migrated a legacy Python deduplication script to a highly optimized BigQuery SQL pipeline using set algorithms. Addressed previously unhandled edge cases to increase the matching accuracy metric from 80-90% to 100%."
+    },
+    {
+      "title": "Toolsite Customer Notes",
+      "link": "",
+      "tags": [
+        "Work",
+        "Lead",
+        "Internal Tools"
+      ],
+      "description": "Built vital functionality allowing the sales team to add and view customer notes directly from the internal toolsite. This enhancement provided an essential backup layer to maintain relationship metrics during high-priority traffic periods when the primary CRM experienced downtime."
     }
   ]
 }
