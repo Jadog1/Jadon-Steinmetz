@@ -1,6 +1,10 @@
 $(document).ready(function () {
+    if (HandleRequestedView()) {
+      return;
+    }
+
     $.ajax({
-      url: "https://jadog1.github.io/Jadon-Steinmetz/metadata.json",
+      url: "metadata.json",
       cache: true,
       dataType: "json"
     })
@@ -14,6 +18,25 @@ $(document).ready(function () {
   });
   
 let allProjects = []; // Store all projects globally for filtering
+
+function HandleRequestedView() {
+  let params = new URLSearchParams(window.location.search);
+  let requestedView = (params.get("view") || params.get("page") || "").toLowerCase();
+
+  if (requestedView !== "resume") {
+    return false;
+  }
+
+  let targetUrl = new URL("resume.html", window.location.href);
+  let hash = window.location.hash;
+
+  if (hash) {
+    targetUrl.hash = hash;
+  }
+
+  window.location.replace(targetUrl.toString());
+  return true;
+}
 
 function HandleMeta(meta) {
   window.metaData = meta; // Store metadata globally for tag ordering
