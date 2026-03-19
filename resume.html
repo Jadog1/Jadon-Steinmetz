@@ -123,7 +123,12 @@
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5px 18px;
+            gap: 18px;
+        }
+        .skills-column {
+            display: grid;
+            gap: 8px;
+            align-content: start;
         }
         .skill-category {
             margin-bottom: 0;
@@ -203,7 +208,7 @@
     <div class="header">
         <div>
             <h1>Jadon Steinmetz</h1>
-            <div class="headline">Backend engineer building ML-powered systems, real-time data products, and scalable distributed infrastructure</div>
+            <div class="headline">Machine learning engineer building production models, real-time inference systems, and scalable backend platforms</div>
         </div>
         <div class="contact-info">
             jadonsteinmetz161@gmail.com<br>
@@ -213,16 +218,21 @@
     </div>
 
     <div class="summary">
-        Backend engineer with 5+ years of experience designing scalable services, training and productionizing machine learning models, and embedding intelligent data products directly into business workflows. Strong track record of turning ambiguous, high-impact problems into reliable systems with measurable operational value.
+        Software engineer with 5+ years of experience building production ML systems and the backend infrastructure that serves them. Delivered fraud detection, deduplication, classification, and retrieval-backed products with real-time inference.
     </div>
 
     <div class="section">
-        <h2>Skills & Technologies</h2>
+        <h2>Machine Learning & Engineering Skills</h2>
         <div class="skills-grid">
-            <div class="skill-category"><strong>Languages:</strong> Go, Python, TypeScript, JavaScript, C#, Dart</div>
-            <div class="skill-category"><strong>ML / AI:</strong> RAG, agentic workflows, LightGBM, scikit-learn, PyTorch</div>
-            <div class="skill-category"><strong>Data:</strong> BigQuery, Postgres, Redis, MySQL, Neo4j, MongoDB, Firestore, SQLite, PGVector</div>
-            <div class="skill-category"><strong>Systems:</strong> Microservices, GCP, Kubernetes, Kafka, Google Pub/Sub, Docker, DataDog, React, Flutter</div>
+            <div class="skills-column">
+                <div class="skill-category"><strong>Machine Learning:</strong> Retrieval systems, model serving, feature engineering, LightGBM, scikit-learn, PyTorch, RAG, agentic workflows</div>
+                <div class="skill-category"><strong>Backend & Infra:</strong> Microservices, GCP, Kubernetes, Kafka, Google Pub/Sub, Docker, DataDog, React, Flutter</div>
+            </div>
+            <div class="skills-column">
+                <div class="skill-category"><strong>Data Platforms:</strong> BigQuery, Postgres, PGVector, Neo4j, Redis, MySQL, MongoDB, Firestore, SQLite</div>
+                <div class="skill-category"><strong>Core Languages:</strong> Python, Go, TypeScript, JavaScript, C#, Dart</div>
+                <div class="skill-category"><strong>AI-Assisted Development:</strong> Claude, Cursor, GitHub Copilot for accelerated research, prototyping, and implementation</div>
+            </div>
         </div>
     </div>
 
@@ -237,19 +247,19 @@
             
             <div class="item-subtitle role">Senior Backend Software Engineer (2025 – Present)</div>
             <ul>
-                <li><strong>Customer Deduplication ML & Inference Platform:</strong> Designed a pairwise model and retrieval layer using Siamese embeddings, reducing noisy duplicate records by 80% with real-time inference across Python, Go, Neo4j, and PGVector.</li>
-                <li><strong>Fraud Detection & Decisioning Platform:</strong> Led delivery of a fraud dashboard, LightGBM model, and backend workflow fine-tuned for fraud detection on web-based electronic delivery orders, reaching 85% evaluation accuracy while surfacing explainable, configurable rules for operations teams.</li>
-                <li><strong>Embedded Customer Intelligence Platform:</strong> Built a real-time, event-driven Go/Postgres service that pushed customer insights from our web data platform directly into a legacy CRM through dynamic lists, actions, and background workflows-making new insights easy to add, significantly increasing adoption, and helping sales surface more opportunities.</li>
-                <li><strong>Customer Classification Model & Infrastructure:</strong> Built a model that classifies customers from items they interact with across touchpoints, and architected the real-time infrastructure to serve those predictions at scale.</li>
-                <li><strong>ML Enablement & Framework Onboarding:</strong> Authored documentation and practical examples for shared team packages that help other teams deploy Go services and use common helpers correctly, while also leading recurring ML learning sessions to grow production-minded machine learning knowledge.</li>
+                <li><strong>Customer Deduplication ML & Inference Platform:</strong> Designed and productionized a customer deduplication system using Siamese embeddings, pairwise scoring, and Neo4j/PGVector retrieval, reducing noisy duplicate records by 80% in real-time inference workflows across Python and Go services.</li>
+                <li><strong>Fraud Detection & Decisioning Platform:</strong> Built and deployed a LightGBM fraud detection pipeline for electronic delivery orders, reaching 85% evaluation accuracy while exposing explainable features and configurable rules through an operations dashboard.</li>
+                <li><strong>Customer Classification Model & Serving:</strong> Developed a customer classification model from multi-touch behavioral signals and architected the real-time infrastructure required to serve predictions at scale inside downstream sales workflows.</li>
+                <li><strong>Embedded Customer Intelligence Platform:</strong> Built a real-time, event-driven Go/Postgres service that pushed customer insights from our web data platform into a legacy CRM through dynamic lists, actions, and background workflows, making new intelligence easy to operationalize.</li>
+                <li><strong>ML Enablement & Framework Onboarding:</strong> Authored practical documentation and examples for shared service packages, and led recurring ML learning sessions focused on production-minded modeling, deployment, and team adoption.</li>
                 <li><strong>Reporting Modernization:</strong> Rebuilt a legacy reporting pipeline with BigQuery and Redis caching, cutting refresh times from multi-day processing to 30-minute intervals with more reliable metrics.</li>
             </ul>
 
             <div class="item-subtitle role">Software Engineer (May 2021 - 2025)</div>
             <ul>
-                <li><strong>Matchmaking & Customer Intelligence:</strong> Helped build an asynchronous Go-based service pairing thousands of customers daily with sales representatives, with customer classification work creating richer behavioral signals that can strengthen recommendation quality.</li>
+                <li><strong>Matchmaking & Customer Intelligence:</strong> Helped build an asynchronous Go-based service pairing thousands of customers daily with sales representatives while developing richer behavioral signals that improved customer intelligence and recommendation quality.</li>
                 <li><strong>Matchmaking Integration Leadership:</strong> Led integration of the matchmaking service into a legacy internal CRM, coordinating asynchronous workflows that supported daily assignment of thousands of customers across a large sales organization.</li>
-                <li><strong>Marketplace Deduplication:</strong> Migrated a legacy Python process into optimized BigQuery SQL set logic, resolving edge cases and improving matching accuracy from 80-90% to 100%.</li>
+                <li><strong>Marketplace Deduplication:</strong> Replaced a legacy Python matching process with optimized BigQuery SQL set logic, resolving edge cases and improving matching accuracy from 80-90% to 100%.</li>
                 <li><strong>Analytics Platform Rewrite:</strong> Modernized legacy analytics APIs in Go into a more dynamic service architecture, reducing friction for adding new tracked events and scaling downstream reporting use cases.</li>
                 <li><strong>Sales Continuity Workflows:</strong> Delivered backup note-entry workflows in the toolsite that let sales continue working during CRM outages, proving especially critical during high-volume periods like Black Friday.</li>
             </ul>
@@ -277,8 +287,8 @@
         <div class="section">
             <h2>Selected Independent Projects</h2>
             <ul class="project-list">
-                <li><strong><a href="https://paper-prayer-af73d35b1629.herokuapp.com/">Paper Prayer</a>:</strong> Built a Flutter/React platform using Python, RAG, and PGVector to recommend relevant content for prayer requests and study-group needs.</li>
-                <li><strong>Real-time Synchronized Apps:</strong> Built budgeting, grocery, and IoT apps with TypeScript, React, and Node.js focused on live collaboration and dashboard visualizations.</li>
+                <li><strong><a href="https://paper-prayer-af73d35b1629.herokuapp.com/">Paper Prayer</a>:</strong> Built a retrieval-augmented recommendation system using Python, RAG, and PGVector to match prayer requests and study-group needs with relevant content, exposed through Flutter/React clients.</li>
+                <li><strong>Real-time Synchronized Apps:</strong> Built budgeting, grocery, and IoT applications with TypeScript, React, and Node.js.</li>
             </ul>
         </div>
     </div>
