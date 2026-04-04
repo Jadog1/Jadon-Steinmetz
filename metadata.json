@@ -356,6 +356,23 @@
       "description": "This project was built for managing finances. From the apps I did use, i was disappointed with the lack of graphing functionality. So, I built a budgeting app to track budgeting reminders, extensively customizable graphing, IoT support for our raspberry pi with a 'display mode', and envelope-style budgeting"
     },
     {
+      "title": "Study Forge AI",
+      "link": "https://github.com/Jadog1/study-forge-ai",
+      "tags": [
+        "Personal",
+        "Actively Used",
+        "GoLang",
+        "TypeScript",
+        "React",
+        "LLMs",
+        "Agentic Workflow",
+        "Semantic Search",
+        "RAG",
+        "Fullstack"
+      ],
+      "description": "Built an AI-powered study system with two complementary tools: one defines quizzes in an agent-friendly YAML format that can be rendered and hosted locally with progress tracking, and the other ingests notes into a searchable knowledge base of sections and components, then uses agentic orchestration and tool-calling chat to generate adaptive follow-up quizzes based on weak areas, prior results, and concept combinations. Implemented the platform across Go and React with a strong emphasis on AI engineering workflows, structured knowledge extraction, and iterative learning feedback loops."
+    },
+    {
       "title": "Google Foobar Challenge",
       "link": "https://foobar.withgoogle.com/",
       "tags": [
