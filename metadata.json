@@ -102,6 +102,18 @@
     ]
   },
   "tags": {
+    "Sweetwater_Senior_ML": [
+      "Machine Learning",
+      "Python",
+      "LightGBM",
+      "Tensorflow",
+      "Pytorch",
+      "Real-time Processing",
+      "Microservices",
+      "GCP",
+      "Google Pubsub",
+      "GoLang"
+    ],
     "Sweetwater_Senior_Backend": [
       "GoLang",
       "Machine Learning",
@@ -170,6 +182,14 @@
     ]
   },
   "work": [
+    {
+      "company": "Sweetwater Sound",
+      "title": "Senior Machine Learning Engineer",
+      "id": "Sweetwater_Senior_ML",
+      "daterange": "May 2026-Present",
+      "companylink": "www.sweetwater.com",
+      "description": "Lead machine learning engineers and the delivery of production ML initiatives, including project planning, baseline establishment, and architecture for model training and deployment. Partner with cross-functional stakeholders to translate business needs into model solutions, from linear regression and LightGBM to neural networks and pretrained transformers. Currently leading real-time fraud detection capabilities projected to identify an additional $100K in fraud, and building a residual demand-forecasting model that extends an established system to support stakeholder trust and adoption."
+    },
     {
       "company": "Sweetwater Sound",
       "title": "Senior Backend Software Engineer",
